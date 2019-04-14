@@ -133,7 +133,7 @@ uploadArchives {
                         id 'zghurskyi'
                         name 'Oleksii Zghurskyi'
                         email 'oleksii.zghurskyi@gmail.com'
-                        organization 'zghurskyi'
+                        organization 'oxymorus'
                         organizationUrl 'https://www.oxymorus.com/'
                     }
                 }
