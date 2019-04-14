@@ -1,0 +1,10 @@
+pluginManagement {
+    repositories {
+        mavenLocal()
+        maven {
+            url = "https://plugins.gradle.org/m2/"
+        }
+    }
+}
+
+rootProject.name = 'kafka-provision-spring-boot-starter'

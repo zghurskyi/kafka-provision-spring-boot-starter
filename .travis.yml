@@ -1,0 +1,28 @@
+language: java
+sudo: false
+install: true
+
+addons:
+  sonarcloud:
+    organization: zghurskyi-github
+    token:
+      secure: "Hdrkn0Eq07rNkY6QyKzvtqVPAm6gBTqEOAw1Ak0LK2RwFaviIN99Ama+CXSCyid4Q4PhkFkHWRVsIEkaPJTZiE6ncTxyKNTsdgKAhjJneoSzL5DHgt7VTJHN8CKkYHxVtE4lnWXsAggPyuW5VrIjjW9zEP7B03geKiaQKLi+Kfo/fpvWHFDSWQQVUgcZMJh6aw8g5OGFbfwBcPKay38Sq1DoKjRipZ8juJ53Ngy/2xAKeHMA67cmtlCx1h9QaFVU8PG/31q18m6Le1MSHP/Y0YEstCu18chdq0d3CH3dmCjUsP68MBuVlAjeoE1T4pgaZVDqghf+amdQSZHwbDJPdD2K8YZgBMVBxGX1N2q13fd5XvC8+Gz9+KL1Hj1Wx9iul24YTO5/rZYYT5oW8pRL1VJwTtiyHHUiD7trOj72qn/RzeOrKETf8IU+pLq18fhpjmpeeOsPqFZOjAC0LQp35mgWbnnt+ht0zULGi3P04Ws66TA0uIPezvoDTAdYUINdeuCsWTq6Du8vq0xpIWz/d6kdUx+OVsYCuuy8hZlAsWjhuAk4ftYG8Twwc/LjtNP4bQg8lYPmDxDVVlPXvImoXyVf8LxHejZomQIw2Y49Phuji8ENH6qUCqE0QUBNZFXyhA0PtkV13iE3ojzeBJQWvXKfqbpYo7NGVnfM/vW+RbY="
+
+jdk:
+  - openjdk8
+
+script:
+  - ./gradlew build sonarqube --scan -s
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+    - $HOME/.m2/repository
+    - $HOME/.sonar/cache
+    - $HOME/.gradle
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+    - .gradle
