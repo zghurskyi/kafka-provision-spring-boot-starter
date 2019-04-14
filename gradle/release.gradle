@@ -1,0 +1,67 @@
+signing {
+    sign configurations.archives
+}
+
+task javadocJar(type: Jar) {
+    archiveClassifier = 'javadoc'
+    from javadoc
+}
+
+task sourcesJar(type: Jar) {
+    archiveClassifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+
+            // Sign POM
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+            // Destination
+            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            // Add required metadata to POM
+            pom.project {
+                name 'Kafka Provision Spring Boot Starter'
+                packaging 'jar'
+                description 'Spring Boot Starter to enable decentralized Kafka provisioning'
+                url 'https://github.com/zghurskyi/kafka-provision-spring-boot-starter'
+
+                scm {
+                    connection 'scm:git:git@github.com:zghurskyi/kafka-provision-spring-boot-starter.git'
+                    developerConnection 'scm:git:ssh://github.com:zghurskyi/kafka-provision-spring-boot-starter.git'
+                    url 'http://github.com/zghurskyi/kafka-provision-spring-boot-starter/tree/master'
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'zghurskyi'
+                        name 'Oleksii Zghurskyi'
+                        email 'oleksii.zghurskyi@gmail.com'
+                        organization 'oxymorus'
+                        organizationUrl 'https://www.oxymorus.com/'
+                    }
+                }
+            }
+        }
+    }
+}
