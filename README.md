@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/zghurskyi/kafka-provision-spring-boot-starter.svg?branch=master)](https://travis-ci.org/zghurskyi/kafka-provision-spring-boot-starter)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=zghurskyi_kafka-provisioner-spring-boot-starter&metric=alert_status)](https://sonarcloud.io/dashboard?id=zghurskyi_kafka-provisioner-spring-boot-starter)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=zghurskyi_kafka-provisioner-spring-boot-starter&metric=coverage)](https://sonarcloud.io/dashboard?id=zghurskyi_kafka-provisioner-spring-boot-starter)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.zghurskyi.kafka/kafka-provision-spring-boot-starter/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.zghurskyi.kafka/kafka-provision-spring-boot-starter)
 
 This repository contains Spring Boot Starter, that enables distributed Kafka topics provisioning and centralized topic configs management at the same time.
 
