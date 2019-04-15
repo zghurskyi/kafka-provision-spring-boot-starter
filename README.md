@@ -19,7 +19,7 @@ To enable automatic topic creation and configuration follow the steps:
 1. Add dependency
 
 ```groovy
-compile 'io.github.zghurskyi.kafka:kafka-provision-spring-boot-starter:0.0.1'
+implementation 'io.github.zghurskyi.kafka:kafka-provision-spring-boot-starter:0.0.1'
 ```
 
 2. Add `@EnableTopicProvisioning`
