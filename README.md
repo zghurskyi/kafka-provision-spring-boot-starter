@@ -35,7 +35,9 @@ public class Application {
 }
 ```
 
-3. Configure topics in `application.yml`
+3. Configure topics:
+
+- `application.yml`:
 
 ```yaml
 # disable topic creation by Spring Cloud Stream
@@ -60,6 +62,22 @@ kafka.provision:
       retention.ms: ${topic.two.retention.ms}
 ```
 > Note: Any valid [Kafka topic config](https://kafka.apache.org/documentation/#topicconfigs) can be used in `configs` section.
+
+- `application.yml`:
+
+```properties
+kafka.provision.brokers=${kafka.brokers}
+kafka.provision.topics[0].name=${topic.one}
+kafka.provision.topics[0].numPartitions=${topic.one.partitions}
+kafka.provision.topics[0].replicationFactor=${topic.one.replication.factor}
+kafka.provision.topics[0].configs.cleanup.policy=${topic.one.cleanup.policy}
+kafka.provision.topics[0].configs.retention.ms=${topic.one.retention.ms}
+kafka.provision.topics[1].name=${topic.two}
+kafka.provision.topics[1].numPartitions=${topic.two.partitions}
+kafka.provision.topics[1].replicationFactor=${topic.two.replication.factor}
+kafka.provision.topics[1].configs.cleanup.policy=${topic.two.cleanup.policy}
+kafka.provision.topics[1].configs.retention.ms=${topic.two.retention.ms}
+```
 
 4. (Optional) Disable provisioning during tests in `application-test.yml`:
 
