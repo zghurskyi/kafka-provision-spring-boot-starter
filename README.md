@@ -5,7 +5,7 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=zghurskyi_kafka-provisioner-spring-boot-starter&metric=coverage)](https://sonarcloud.io/dashboard?id=zghurskyi_kafka-provisioner-spring-boot-starter)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.zghurskyi.kafka/kafka-provision-spring-boot-starter/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.zghurskyi.kafka/kafka-provision-spring-boot-starter)
 
-This repository contains Spring Boot Starter, that enables distributed Kafka topics provisioning and centralized topic configs management at the same time.
+This repository contains Spring Boot Starter, that enables distributed Kafka topics provisioning and centralized topic configs management.
 
 Following featurs are supported:
 - creating new topics
@@ -69,9 +69,9 @@ kafka.provision.enabled: false
 
 # Externalized configuration
 
-The starter allows centralized management of topic configurations and decentralized topic provisioning at the same time. 
+The starter allows centralized management of topic configurations and decentralized topic provisioning. 
 
-This is possible, since provisioning is specified through application properties. So, simply manage Kafka topics state in your system through environment variables, that are collected together in centralized place:
+This is possible, because provisioning is specified through application properties. So, simply manage Kafka topics state in your system through environment variables, that are collected together in centralized place:
 
 - `Dockerfile`:
 
