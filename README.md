@@ -63,7 +63,7 @@ kafka.provision:
 ```
 > Note: Any valid [Kafka topic config](https://kafka.apache.org/documentation/#topicconfigs) can be used in `configs` section.
 
-- `application.yml`:
+- `application.properties`:
 
 ```properties
 kafka.provision.brokers=${kafka.brokers}
