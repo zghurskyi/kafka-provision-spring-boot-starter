@@ -14,6 +14,8 @@ Following featurs are supported:
 
 # Getting Started
 
+> Note: Introduction article with more details can be found [here](https://www.oxymorus.com/2019/04/20/kafka-provision-spring-boot-starter.html).
+
 To enable automatic topic creation and configuration follow the steps:
 
 1. Add dependency
